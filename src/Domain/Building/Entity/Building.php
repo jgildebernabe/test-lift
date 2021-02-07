@@ -124,10 +124,6 @@ class Building
         usort(
             $liftsAtFloor,
             function (Lift $a, Lift $b) {
-                if ($a->countFloors() === $b->countFloors()) {
-                    return 0;
-                }
-
                 return $a->countFloors() < $b->countFloors() ? -1 : 1;
             }
         );
@@ -141,6 +137,18 @@ class Building
     public function lifts(): array
     {
         return $this->lifts;
+    }
+
+    public function lift(int $number): ?Lift
+    {
+        $filteredLifts = array_filter(
+            $this->lifts,
+            function (Lift $lift) use ($number) {
+                return $lift->number() === $number;
+            }
+        );
+
+        return !empty($filteredLifts) ? current($filteredLifts) : null;
     }
 
 }

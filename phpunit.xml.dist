@@ -27,6 +27,7 @@
             <directory suffix=".php">src</directory>
             <exclude>
                 <file>src/Infrastructure/Kernel.php</file>
+                <directory>src/UI</directory>
             </exclude>
         </whitelist>
     </filter>

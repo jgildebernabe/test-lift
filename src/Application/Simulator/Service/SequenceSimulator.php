@@ -23,6 +23,7 @@ class SequenceSimulator
     public function run(Building $building, array $sequences, \DateTimeImmutable $start, \DateTimeImmutable $end): array
     {
         $liftRequests = $this->flattenLiftRequests($sequences);
+
         $liftStatuses = [];
 
         while ($start->getTimestamp() <= $end->getTimestamp()) {

@@ -80,7 +80,7 @@ class LiftSimulatorCommand extends Command
             $endTime
         );
         foreach ($liftStatuses as $time => $statuses) {
-            echo $time . ":\n";
+            $io->writeln($time . ':');
             $lifts = "";
             foreach ($statuses as $status) {
                 $lifts .= sprintf(
@@ -90,7 +90,7 @@ class LiftSimulatorCommand extends Command
                     $status->floorsCount()
                 );
             }
-            echo $lifts . "\n";
+            $io->writeln($lifts);
         }
 
         return Command::SUCCESS;

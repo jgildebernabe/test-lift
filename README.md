@@ -12,6 +12,14 @@ You will need to install docker to run this project
 
 From the project root directory run:
 
+To build the docker image:
 `docker build -t jgil -f docker/php-fpm/Dockerfile . `
 
+To run the simulator
 `docker run jgil bin/console lift:simulator:run`
+
+## Run tests
+
+It will run phpcs and phpunit
+
+`docker run jgil composer test`

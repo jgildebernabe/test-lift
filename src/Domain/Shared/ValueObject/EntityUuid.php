@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Bodas\Domain\Shared\ValueObject;
 
 use Ramsey\Uuid\Uuid;
-use Stringable;
 
-class EntityUuid implements Stringable
+class EntityUuid
 {
     protected string $value;
 
@@ -24,10 +23,5 @@ class EntityUuid implements Stringable
     public function equals(EntityUuid $entityUuid): bool
     {
         return $this->value() === $entityUuid->value();
-    }
-
-    public function __toString(): string
-    {
-        return $this->value();
     }
 }

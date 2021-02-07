@@ -57,7 +57,7 @@
         ],
         "test": [
             "vendor/bin/phpstan analyse src --level max --ansi",
-            "bin/phpunit"
+            "bin/phpunit --coverage-text"
         ]
     },
     "conflict": {
