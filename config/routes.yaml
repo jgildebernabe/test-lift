@@ -1,0 +1,4 @@
+health:
+  path: /health
+  controller: Bodas\UI\Http\Controller\Health\HealthController
+  methods: [ GET ]
